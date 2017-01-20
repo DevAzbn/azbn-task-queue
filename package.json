@@ -1,0 +1,12 @@
+{
+  "name": "azbn-task-queue",
+  "version": "0.5.1",
+  "description": "Simple lib for build task-queues in Node.JS",
+  "main": "azbn-task-queue.js",
+  "scripts": {
+    "test": "jasmine-node --verbose --junitreport spec"
+  },
+  "keywords": [],
+  "author": "= <alexander.zybin@yandex.ru>",
+  "license": "ISC"
+}
