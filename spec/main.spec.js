@@ -20,7 +20,7 @@ describe('Базовый функционал', function(){
 		
 	});
 	
-	it('Выполнение 1 задания', function(done) {
+	it('Порядок наступления моментов при выполнении 1 задания', function(done) {
 		
 		var t0, t1, t2;
 		
@@ -60,6 +60,32 @@ describe('Базовый функционал', function(){
 				done();
 				
 			});
+		
+	});
+	
+	it('Работа с setTimeout', function(done) {
+		
+		var pause = 1000;
+		
+		setTimeout(function(){
+			taskqueue
+				.add(function(afterTask){
+					
+					setTimeout(function(){
+						afterTask('test2');
+					}, pause);
+					
+				}, pause, function(res){
+					
+					expect(res).toBeDefined(true);
+					expect(res[0]).toEqual('test2');
+					
+					done();
+					
+				});
+		}, pause);
+		
+		
 		
 	});
 	
